@@ -44,10 +44,12 @@ var app = express();
  * Connect to MongoDB.
  */
 var sequelize = new Sequelize(secrets.db, {
-      dialectOptions: {
-        ssl: true
-      }}
-    );
+  dialectOptions: {
+    ssl: true
+}});
+
+var sequelizeStore = new SequelizeStore({ db: sequelize });
+sequelizeStore.sync();
 
 /**
  * Express configuration.
@@ -69,7 +71,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   secret: secrets.sessionSecret,
-  store: new SequelizeStore({ db: sequelize })
+  store: sequelizeStore
 }));
 app.use(passport.initialize());
 app.use(passport.session());
