@@ -26,8 +26,8 @@ module.exports = {
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
   mailgun: {
-    user: process.env.MAILGUN_USER || 'postmaster@sandbox697fcddc09814c6b83718b9fd5d4e5dc.mailgun.org',
-    password: process.env.MAILGUN_PASSWORD || '29eldds1uri6'
+    user: process.env.MAILGUN_USER || 'postmaster@app357561680ab04e1a9f4fcbd8c51d707c.mailgun.org',
+    password: process.env.MAILGUN_PASSWORD || 'e6bcaaed8bd1173955f7fc7061689a49'
   },
   
   mandrill: {
@@ -144,3 +144,4 @@ module.exports = {
     accessToken: process.env.BITGO_ACCESS_TOKEN || '4fca3ed3c2839be45b03bbd330e5ab1f9b3989ddd949bf6b8765518bc6a0e709'
   }
 };
+s
