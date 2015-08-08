@@ -144,4 +144,3 @@ module.exports = {
     accessToken: process.env.BITGO_ACCESS_TOKEN || '4fca3ed3c2839be45b03bbd330e5ab1f9b3989ddd949bf6b8765518bc6a0e709'
   }
 };
-s
