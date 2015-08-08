@@ -2,8 +2,17 @@ extends layout
 
 block content
   h1 Charitourney
+  p.lead A game that empowers individuals to believe in the act of giving, through democratizing charity in the form of tournament brackets. 
+  hr
+
   != css('main')
-  
+  .row
+  h2 About 
+  p Many people want to make an impact on those who are less fortunate, but either lack the monetary resources to do so or don't believe in their ability as an individual to make a difference. Charitourney addresses this issue by aggregating the mutual resources of many benefactors and displaying it in the conspicuous format of a game. Charitourney features rising or recently established charities in bracket-like tournament rounds, in which users are able to donate any amount of their liking to their favorite charity as a "vote". The combined pool of money donated in each round is used to determine the winners of each bracket, who then advance to subsequent rounds. In the end, all money donated is given to the respective charities based on their relative popularity in the rounds and acquired donations. 
+  p
+  p Charitourney empowers individuals by not requiring any single person to commit a large sum of money, but instead providing them with the potential to create a much larger impact by encouraging others to also donate for their charity of liking. In essence, democratizing philanthropy with a social media twist :)
+  p
+
  a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
    i.fa.fa-facebook
    | Sign in with Facebook

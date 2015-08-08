@@ -6,13 +6,10 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='csrf-token', content=_csrf)
     title #{title} - Charitourney
-    != css('main')
+    != css('main')  
 
-    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
-    script(src='/bootstrap/js/bootstrap.min.js')
+    
+
   body
     include partials/header
 
