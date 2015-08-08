@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 Payments Test
+    .row
+        form#checkout(method='post', action='/payment_methods')
+            input(type='hidden', name='_csrf', value=_csrf)
+            input(type='text', name='payment_amount', placeholder='Amount')
+            div#payment-form
+            input(type='submit', value='Pay')
+        script(src='https://js.braintreegateway.com/v2/braintree.js')
+        script.
+            braintree.setup("#{clientToken}", "dropin", {
+              container: "payment-form"
+            });
