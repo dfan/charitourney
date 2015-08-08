@@ -95,6 +95,12 @@ app.get('/', homeController.index);
 app.get('/tournament', homeController.tournament);
 app.get('/battle', battleController.get_battle);
 app.post('/battle', battleController.post_battle);
+
+// PAYMENT TEST
+app.get('/payments_test', paymentsController.getPaymentsTest);
+app.get('/client_token', paymentsController.getClientToken);
+app.post('/payment_methods', paymentsController.postPaymentMethods);
+
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -112,12 +118,6 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 
-/**
- * Custom routes for app.
- */
-app.get('/payments_test', paymentsController.getPaymentsTest);
-app.get('/client_token', paymentsController.getClientToken);
-app.post('/payment_methods', paymentsController.postPaymentMethods);
 
 /**
  * OAuth authentication routes. (Sign in)
