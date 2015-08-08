@@ -8,6 +8,8 @@ var secrets = require('../config/secrets');
 var sequelize = new Sequelize(secrets.db, { dialectOptions: { ssl: true }});
 var db        = {};
 
+sequelize.sync();
+
 fs
   .readdirSync(__dirname)
   .filter(function(file) {

@@ -1,3 +1,5 @@
+var models  = require('../models');
+
 /**
  * GET /
  * Battle page.
