@@ -84,7 +84,7 @@ module.exports = {
   },
 
   google: {
-    clientID: process.env.GOOGLE_ID || '828110519058.apps.googleusercontent.com',
+    clientID: process.env.GOOGLE_ID || '664807225610-c9i5iimbvn04iet87hbq33jieojpgq40.apps.googleusercontent.com',
     clientSecret: process.env.GOOGLE_SECRET || 'JdZsIaWhUFIchmC1a_IZzOHb',
     callbackURL: '/auth/google/callback',
     passReqToCallback: true
@@ -92,7 +92,7 @@ module.exports = {
 
   linkedin: {
     clientID: process.env.LINKEDIN_ID || '77chexmowru601',
-    clientSecret: process.env.LINKEDIN_SECRET || 'szdC8lN2s2SuMSy8',
+    clientSecret: process.env.LINKEDIN_SECRET || 'QPcPnTchQTr7a8fkZzy66sR-',
     callbackURL: process.env.LINKEDIN_CALLBACK_URL || 'http://localhost:3000/auth/linkedin/callback',
     scope: ['r_fullprofile', 'r_emailaddress', 'r_network'],
     passReqToCallback: true
