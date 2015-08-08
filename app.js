@@ -21,6 +21,11 @@ var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
 /**
+ * Models
+ */
+ var models = require('./models');
+
+/**
  * Controllers (route handlers).
  */
 var homeController = require('./controllers/home');
@@ -41,34 +46,10 @@ var passportConf = require('./config/passport');
 var app = express();
 
 /**
- * Connect to MongoDB.
+ * Connect to Postgres.
  */
-var sequelize = new Sequelize(secrets.db, {
-  dialectOptions: {
-    ssl: true
-}});
-
-var sequelizeStore = new SequelizeStore({ db: sequelize });
+var sequelizeStore = new SequelizeStore({ db: models.sequelize });
 sequelizeStore.sync();
-
-var db        = {};
-fs = require("fs");
-fs
-  .readdirSync(__dirname + '/models/')
-  .forEach(function(file) {
-    var model = sequelize.import(path.join(__dirname + '/models/', file));
-    db[model.name] = model;
-  });
-
-Object.keys(db).forEach(function(modelName) {
-  if ("associate" in db[modelName]) {
-    db[modelName].associate(db);
-  }
-});
-
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
 
 /**
  * Express configuration.

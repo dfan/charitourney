@@ -1,5 +1,3 @@
-"use strict";
-
 var Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
@@ -14,12 +12,15 @@ module.exports = function(sequelize, DataTypes) {
     github: Sequelize.STRING,
     instagram: Sequelize.STRING,
     linkedin: Sequelize.STRING
+  }, {
+    classMethods: {
+      associate: function(models) {
+        User.hasMany(models.Choice);
+      }
+    }
   });
   return User;
 };
-
-
-
 /*
 var userSchema = new mongoose.Schema({
   email: { type: String, unique: true, lowercase: true },
