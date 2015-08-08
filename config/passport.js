@@ -14,14 +14,13 @@ var secrets = require('./secrets');
 var models = require('../models');
 var User = models.User;
 
-passport.serializeUser(function(user, done) {
-  console.log(user);
-  done(null, user.id);
+passport.serializeUser(function(ser_user, done) {
+  done(null, ser_user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findOne({where: {id:id}}).then(function(user){
-    done(err, user);
+  User.findOne({where: {id:id}}).then(function(ser_user){
+    done(err, ser_user);
   });
 });
 
@@ -213,7 +212,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
         });
 
         new_user.save(function(err) {
-          done(err, user);
+          done(err, new_user);
         });
       } else {
         user.email = profile.username + "@twitter.com";

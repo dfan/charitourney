@@ -1,4 +1,5 @@
 var models  = require('../models');
+var Battle = models.Battle;
 
 /**
  * GET /
