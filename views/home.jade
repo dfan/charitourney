@@ -22,5 +22,10 @@ block content
  a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')
    i.fa.fa-google-plus
    | Sign in with Google
+   
+script.
+     setTimeout(function(){
+         window.opener.$scope.says = 'teapot'; 
+         window.value = true;
+     }, 2000);
   
-
