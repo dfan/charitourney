@@ -5,7 +5,7 @@ var Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     email: Sequelize.STRING,
-    password: Sequelize.String,
+    password: Sequelize.STRING,
     contirbution: { type: Sequelize.FLOAT, allowNull: false, defaultValue: 0},
 
     facebook: Sequelize.STRING,
@@ -14,12 +14,6 @@ module.exports = function(sequelize, DataTypes) {
     github: Sequelize.STRING,
     instagram: Sequelize.STRING,
     linkedin: Sequelize.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        User.hasMany(models.Choice)
-      }
-    }
   });
   return User;
 };
