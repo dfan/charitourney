@@ -43,7 +43,11 @@ var app = express();
 /**
  * Connect to MongoDB.
  */
-var sequelize = new Sequelize(secrets.db);
+var sequelize = new Sequelize(secrets.db, {
+      dialectOptions: {
+        ssl: true
+      }}
+    );
 
 /**
  * Express configuration.
