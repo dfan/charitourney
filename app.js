@@ -96,8 +96,8 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  */
 app.get('/', homeController.index);
 app.get('/tournament', homeController.tournament);
-app.get('/battle/:id', battleController.get_battle);
-app.post('/battle/:id', battleController.post_battle);
+app.get('/battle', battleController.get_battle);
+app.post('/battle', battleController.post_battle);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
