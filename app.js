@@ -27,7 +27,6 @@ var connectAssets = require('connect-assets');
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var battleController = require('./controllers/battle');
-var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var paymentsController = require('./controllers/payment');
 
