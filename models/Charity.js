@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
-var chairySchema = new mongoose.Schema({
+var chairtySchema = new mongoose.Schema({
   name: { type: String, default: '' },
-  points: { type: Number, default: o },
+  total_points: { type: Number, default: 0 }
 });
 
-module.exports = mongoose.model('Chairity', chairySchema);
+module.exports = mongoose.model('Chairity', chairtySchema);
