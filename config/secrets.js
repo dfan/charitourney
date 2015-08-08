@@ -21,9 +21,7 @@
 
 module.exports = {
 
-  postgrest: 'postgres://cqnflxuzrxivql:3VdNptm4uVVBPFtUZmjeYjBDjs@ec2-54-83-17-8.compute-1.amazonaws.com:5432/d9im7jnj5kv3pg',
-
-  db: process.env.MONGODB || process.env.MONGOLAB_URI || 'mongodb://server:charitourney47ghd8@ds031193.mongolab.com:31193/heroku_mkpwlhpf',
+  db: 'postgres://cqnflxuzrxivql:3VdNptm4uVVBPFtUZmjeYjBDjs@ec2-54-83-17-8.compute-1.amazonaws.com:5432/d9im7jnj5kv3pg',
 
   braintree: {
     merchantId: 'kdrzypr4nbwgn5pj',
