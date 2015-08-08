@@ -50,8 +50,8 @@ module.exports = {
   },
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '754220301289665',
-    clientSecret: process.env.FACEBOOK_SECRET || '41860e58c256a3d7ad8267d3c1939a4a',
+    clientID: process.env.FACEBOOK_ID || '1477729029211696',
+    clientSecret: process.env.FACEBOOK_SECRET || 'ef16b84a22d1f6d97248cb7d6851db14',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },
@@ -71,8 +71,8 @@ module.exports = {
   },
 
   twitter: {
-    consumerKey: process.env.TWITTER_KEY || '6NNBDyJ2TavL407A3lWxPFKBI',
-    consumerSecret: process.env.TWITTER_SECRET  || 'ZHaYyK3DQCqv49Z9ofsYdqiUgeoICyh6uoBgFfu7OeYC7wTQKa',
+    consumerKey: process.env.TWITTER_KEY || 'B7zwLD8v0NGnc5o9gWpZt03SD',
+    consumerSecret: process.env.TWITTER_SECRET  || 'Y1XaJ6lU6C1wUXUu2PNXp1MEE6dd52AKJNN1jijtzOUkHZhz7k',
     callbackURL: '/auth/twitter/callback',
     passReqToCallback: true
   },
