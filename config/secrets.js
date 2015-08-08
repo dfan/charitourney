@@ -23,6 +23,12 @@ module.exports = {
 
   db: process.env.MONGODB || process.env.MONGOLAB_URI || 'mongodb://server:charitourney47ghd8@ds031193.mongolab.com:31193/heroku_mkpwlhpf',
 
+  braintree: {
+    merchantId: 'kdrzypr4nbwgn5pj',
+    publicKey: 'pbf7b85xjk3qjh9q',
+    privateKey: '80228ded23bc36419b12ae4763759deb'
+  },
+
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
   mailgun: {
