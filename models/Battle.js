@@ -1,6 +1,9 @@
 "use strict";
 
 var Sequelize = require('sequelize');
+var Tournament = require('./Tournament');
+var Charity = require('./Charity');
+
 
 module.exports = function(sequelize, DataTypes) {
   var Battle = sequelize.define("Charity", {

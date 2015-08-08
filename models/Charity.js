@@ -5,8 +5,8 @@ var Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   var Charity = sequelize.define("Charity", {
     name: { type: Sequelize.STRING, allowNull: false},
- 	image: { type: Sequelize.STRING, allowNull: false},
- 	description: { type: Sequelize.STRING, allowNull: false}
+   	image: { type: Sequelize.STRING, allowNull: false},
+   	description: { type: Sequelize.STRING, allowNull: false}
   });
   return Charity;
 };
@@ -67,6 +67,8 @@ userSchema.methods.gravatar = function(size) {
   return 'https://gravatar.com/avatar/' + md5 + '?s=' + size + '&d=retro';
 };
 
-*/
+
 
 module.exports = mongoose.model('User', userSchema);
+
+*/
