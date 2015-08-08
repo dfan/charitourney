@@ -1,0 +1,24 @@
+// When a user has registered for an account 
+"You have successfully registered on ChariTourney! "
+
+// When a user is placed into a bracket
+"You have been entered into charity bracket #__ in round __, featuring (name 1) and (name 2). Read the given documentation of each charity, research the one you like most and donate an amount to help it win!"
+
+// When a user has entered money in the current round
+"Thank you for playing! You have contributed __ $ in the current round to charity __. The current round will end on __. Until then, keep updated on the charity progression or get your friends to play!"
+
+// (for registered users) When a new round has started
+"The winners from the previous round have advanced! This round will start at __ and end at __. Featured matchups are as follows: __ v. __, __ v. __, etc."
+
+// When a round is halfway through
+"Reminder to vote in the current round if you haven't already! Only __ days/weeks remain."
+
+// When a round has concluded
+"The current round has ended. Winners will be finalized with the new round updated on __."
+
+// When the winner of each bracket is announced
+(if the user's charity advanced to the next round)
+"__ won thanks to your support with a score of __ to __! __ will be facing __ next round."
+(if the user's charity didn't advance)
+"Sadly __ did not advance but feel free to keep playing! There are plenty of charities to support and root for."
+
