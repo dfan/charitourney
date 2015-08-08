@@ -1,10 +1,11 @@
-var mongoose = require('mongoose');
+"use strict";
 
-var tournamentSchema = new mongoose.Schema({
-  name: { type: String, default: '' },
-  active: { type: Boolean, default: false },
-  charities: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Charity' }],
-  battles: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Battle'}]
-});
+var Sequelize = require('sequelize');
 
-module.exports = mongoose.model('Tournament', tournamentSchema);
+module.exports = function(sequelize, DataTypes) {
+  var Tournament = sequelize.define("Charity", {
+    active: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: true},
+  	current_rount: { type: Sequelize.INTEGER, allowNull: false, defaultValue: 1}
+  });
+  return Tournament;
+};

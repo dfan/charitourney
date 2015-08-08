@@ -1,7 +1,32 @@
-var bcrypt = require('bcrypt-nodejs');
-var crypto = require('crypto');
-var mongoose = require('mongoose');
+"use strict";
 
+var Sequelize = require('sequelize');
+
+module.exports = function(sequelize, DataTypes) {
+  var User = sequelize.define("User", {
+    email: Sequelize.STRING,
+    password: Sequelize.String,
+    contirbution: { type: Sequelize.FLOAT, allowNull: false, defaultValue: 0},
+
+    facebook: Sequelize.STRING,
+    twitter: Sequelize.STRING,
+    google: Sequelize.STRING,
+    github: Sequelize.STRING,
+    instagram: Sequelize.STRING,
+    linkedin: Sequelize.STRING
+  }, {
+    classMethods: {
+      associate: function(models) {
+        User.hasMany(models.Choice)
+      }
+    }
+  });
+  return User;
+};
+
+
+
+/*
 var userSchema = new mongoose.Schema({
   email: { type: String, unique: true, lowercase: true },
   password: String,
@@ -26,9 +51,7 @@ var userSchema = new mongoose.Schema({
   resetPasswordExpires: Date
 });
 
-/**
- * Password hash middleware.
- */
+
 userSchema.pre('save', function(next) {
   var user = this;
   if (!user.isModified('password')) return next();
@@ -42,9 +65,7 @@ userSchema.pre('save', function(next) {
   });
 });
 
-/**
- * Helper method for validating user's password.
- */
+
 userSchema.methods.comparePassword = function(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
     if (err) return cb(err);
@@ -52,9 +73,6 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
   });
 };
 
-/**
- * Helper method for getting user's gravatar.
- */
 userSchema.methods.gravatar = function(size) {
   if (!size) size = 200;
   if (!this.email) return 'https://gravatar.com/avatar/?s=' + size + '&d=retro';
@@ -62,4 +80,8 @@ userSchema.methods.gravatar = function(size) {
   return 'https://gravatar.com/avatar/' + md5 + '?s=' + size + '&d=retro';
 };
 
+
+
 module.exports = mongoose.model('User', userSchema);
+
+*/
