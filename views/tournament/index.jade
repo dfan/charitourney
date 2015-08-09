@@ -24,9 +24,9 @@ block content
       br
        
     .col-lg-6
-      if user.contribution == 0
+      if user && user.contribution == 0
         a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
-      else
+      else if user
         a.btn.btn-primary.disabled.btn-lg.center-block Your Contribution: $#{user.contribution}
       .money
         h2 $#{totalContributions}
