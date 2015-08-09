@@ -29,15 +29,28 @@ exports.getTournamentJoin = function(req, res) {
   });
 };
 
-// POST /tournaments/:tournament/join
+// POST /tournaments/join
 exports.postTournamentJoin = function(req, res) {
+  var amount = req.body.payment_amount;
   var nonce = req.body.payment_method_nonce;
 
-  braintreeGateway.transaction.sale({
-    amount: req.body.payment_amount,
-    paymentMethodNonce: nonce,
-  }, function (err, btRes) {
+  async.series([
+    function(done) {
+      braintreeGateway.transaction.sale({
+        amount: amount,
+        paymentMethodNonce: nonce,
+      }, function(err, btRes) {
+        if (err) console.log(err);
+        done(null, btRes);
+      });
+    }, function(done) {
+      req.user.updateAttributes({
+        contribution: parseFloat(amount)
+      }).then(function() {
+        done(null, req.user);
+      });
+    }
+  ], function (err, results) {
     res.redirect('/tournament/');
-    console.dir(btRes);
   });
 };
