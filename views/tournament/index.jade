@@ -44,16 +44,6 @@ block content
           p Charity 8: Targeting Poverty in NYC.
           a(href='#', rel='modal:close') 
           p Close or press ESC    
-
-
-      //#ex1(style='display:none;')
-        //p Thanks for clicking. That felt good.
-          //a(href='#', rel='modal:close') 
-          //p Close or press ESC
-
-
-
-
       
       a(href="#dialog", rel="modal:open") 
         img(src='/images/0nbtfrrx.jpg', class="charity_img")
@@ -69,7 +59,8 @@ block content
       br
        
     .col-lg-6
-      a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
+      if user.contribution == 0
+        a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
       img(src="http://cdn2.winston.com/cached/40090/images/home-placeholder-circle.png", class="circle_img")
       
     .col-lg-3 
