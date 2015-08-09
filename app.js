@@ -124,6 +124,55 @@ app.get('/api', function (req, res) {
 });
 
 
+/* Twilio Stuff ***/
+
+/*
+var accountSid = 'PN36f2dcde70462cdac4d93f75bb19cc8c';
+var authToken = "{{ auth_token }}";
+var client = require('twilio')(accountSid, authToken);
+ 
+client.messages.create({
+    body: "Jenny please?! I love you <3",
+    to: "+19083920562",
+    from: "+17323054562’",
+    mediaUrl: "http://www.example.com/hearts.png"
+}, function(err, message) {
+    process.stdout.write(message.sid);
+});
+*/
+
+
+/*
+//require the Twilio module and create a REST client
+var ACCOUNT_SID = 'AC1ea0cf6b6d08448a23c18b65c2fd0283';
+var AUTH_TOKEN = "756b3c09c006af28e75a4af448046f73";
+var client = require('twilio')('AC1ea0cf6b6d08448a23c18b65c2fd0283', '756b3c09c006af28e75a4af448046f73');
+
+
+//Send an SMS text message
+      client.sendMessage({
+
+          to:'+19083920562', // Any number Twilio can deliver to
+          from: '+17323054562', // A number you bought from Twilio and can use for outbound communication
+          body: 'word to your mother.' // body of the SMS message
+
+      }, function(err, responseData) { //this function is executed when a response is received from Twilio
+
+          if (!err) { // "err" is an error received during the request, if any
+
+              // "responseData" is a JavaScript object containing data received from Twilio.
+              // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+              // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+
+              console.log(responseData.from); // outputs "+14506667788"
+              console.log(responseData.body); // outputs "word to your mother."
+
+          }
+      });
+/*
+
+
+
 /**
  * OAuth authentication routes. (Sign in)
  */
@@ -145,3 +194,6 @@ app.listen(app.get('port'), function() {
 });
 
 module.exports = app;
+
+
+

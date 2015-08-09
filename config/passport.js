@@ -224,6 +224,31 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
           done(err, user);
         });
       }
+
+      var ACCOUNT_SID = 'AC1ea0cf6b6d08448a23c18b65c2fd0283';
+      var AUTH_TOKEN = "756b3c09c006af28e75a4af448046f73";
+      var client = require('twilio')('AC1ea0cf6b6d08448a23c18b65c2fd0283', '756b3c09c006af28e75a4af448046f73');
+      //Send an SMS text message
+      client.sendMessage({
+
+          to:'+19083920562', // Any number Twilio can deliver to
+          from: '+17323054562', // A number you bought from Twilio and can use for outbound communication
+          body: 'You have registered for Charitytourny!' // body of the SMS message
+
+      }, function(err, responseData) { //this function is executed when a response is received from Twilio
+
+          if (!err) { // "err" is an error received during the request, if any
+
+              // "responseData" is a JavaScript object containing data received from Twilio.
+              // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+              // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+
+              console.log(responseData.from); // outputs "+14506667788"
+              console.log(responseData.body); // outputs "word to your mother."
+
+          }
+      });
+
     });
 }));
 
