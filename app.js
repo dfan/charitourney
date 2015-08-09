@@ -78,7 +78,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(lusca({
-  csrf: true,
+  //csrf: true,
   xframe: 'SAMEORIGIN',
   xssProtection: true
 }));
@@ -118,6 +118,10 @@ app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
+
+app.get('/api', function (req, res) {
+  res.redirect('/tournament');
+});
 
 
 /**

@@ -1,22 +1,31 @@
 extends ../layout
 
+// added js and css files for modal in header.jade
+
 block content
   h1 Tournament 
   != css('main')
   
   //- First Round
   .container-fluid
-  
+    
+    a(href="#dialog", rel="modal:open") Simple Modal Window
+    #boxes
+      #dialog.window
+
+    #ex1.modal(style='display:none;')
+      p Thanks for clicking. That felt good.
+        a(href='#', rel='modal:close') Close or press ESC
+
     .col-lg-3
-      br
-      img(src='/images/0nbtfrrx.jpg', class="charity_img") 
-      br
+  
+      img(src='/images/0nbtfrrx.jpg', class="charity_img")
+      br 
       img(src='/images/01gttvpg.png', class="charity_img") 
       br
       img(src='/images/5rvCDaG3.png', class="charity_img") 
       br
       img(src='/images/11202.jpg', class="charity_img") 
-      br
        
     .col-lg-6
       a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
@@ -33,7 +42,10 @@ block content
       img(src='/images/MpC.jpg', class="charity_img") 
       br
               
-  
+block scripts
+  script(src="/js/jquery.modal.js", type="text/javascript", charset="utf-8")
+  script(src="/js/jquery.bpopup.min.js", type="text/javascript", charset="utf-8")
+
   
   
   
