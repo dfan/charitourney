@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     email: Sequelize.STRING,
     password: Sequelize.STRING,
-    contirbution: { type: Sequelize.FLOAT, allowNull: false, defaultValue: 0},
+    contribution: { type: Sequelize.FLOAT, allowNull: false, defaultValue: 0},
 
     facebook: Sequelize.STRING,
     twitter: Sequelize.STRING,
