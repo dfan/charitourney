@@ -62,6 +62,7 @@ exports.postTournamentJoin = function(req, res) {
       });
     }
   ], function (err, results) {
+    req.flash('info', { msg: 'Successfully joined tournament with a $'+amount+' contribution.' });
     res.redirect('/tournament/');
   });
 };

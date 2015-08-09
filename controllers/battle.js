@@ -40,6 +40,7 @@ exports.get_battle = function(req, res) {
         }
       }
 
+      req.flash('info', { msg: 'Already did all the battles. Sorry!' });
       res.redirect('/tournament');
       console.log('redirected;');
     });
