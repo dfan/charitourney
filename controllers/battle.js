@@ -47,7 +47,7 @@ exports.get_battle = function(req, res) {
         console.log('redirected;');
     });
   });
-};
+});
 
 
 exports.post_battle = function(req, res) {
