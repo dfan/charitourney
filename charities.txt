@@ -1,0 +1,35 @@
+charity: Citymeals on Wheels
+description: Citymeals-on-Wheels raises private funds to ensure no homebound elderly New Yorker will ever go a day without food or human company. Last year, our family of contributors helped us bring 2 million nutritious meals to more than 18,000 frail aged in every borough of New York City. In addition, nearly 19,000 volunteers collectively spent 67,397 hours visiting and delivering meals to our neighbors.
+Citymeals funds 31 community-based agencies that bring weekend, holiday and emergency meals to homebound elderly New Yorkers who can no longer shop or cook for themselves. In addition, our Mobile Food Pantry program delivers weekly bags of grocery staples to the most at-risk elderly and our Fresh Produce program enables us to supplement regular meal deliveries with fresh fruit and vegetables from local farmers.
+
+link:http://www.citymeals.org/
+
+charity: Learning Leaders
+description: Learning Leaders is New York City’s largest and most experienced organization dedicated to engaging families and communities to support student success. Serving NYC public schools since 1956, our programs are proven to enhance student achievement by providing individualized tutoring and assistance to schools and increasing parents’ ability to foster their children’s education.
+link: http://www.learningleaders.org/about/
+
+charity: New York Cares
+description: New York Cares was founded by a group of friends who wanted to take action against serious social issues that faced our city in the late 1980s. Finding few options to help, they created their own organization to address the problems from the ground up.
+New York Cares is now the city's largest volunteer management organization, running volunteer programs for 1,300 nonprofits, city agencies, and public schools. Today's volunteers share our founders' vision that we all have a role to play in making our city a better place.
+link: https://www.newyorkcares.org/
+
+charity: Henry Street Settlement
+description: Henry Street Settlement delivers a wide range of social service, arts and health care programs to more than 50,000 New Yorkers each year. Distinguished by a profound connection to its neighbors, a willingness to address new problems with swift and innovative solutions, and a strong record of accomplishment, Henry Street challenges the effects of urban poverty by helping families achieve better lives for themselves and their children.
+link: http://www.henrystreet.org/
+
+charity: Breast Cancer Research Foundation
+description: We invest in research that's changing how we think about cancer. For every dollar spent, 91 cents is committed to tackling this disease. That means more answers, faster breakthroughs and treatment personalized for every patient. With more than half a billion dollars raised to date, that's progress.
+link: http://www.bcrfcure.org/
+
+charity: Food Bank for New York
+description: ood Bank For New York City has been the city’s major hunger-relief organization working to end hunger throughout the five boroughs for more than 30 years. Nearly one in five New Yorkers relies on Food Bank for food and other resources. Food Bank takes a strategic, multifaceted approach that provides meals and builds capacity in the neediest communities, while raising awareness and engagement among all New Yorkers. Through its network of more than 1,000 charities and schools citywide, Food Bank provides food for more than 66 million free meals for New Yorkers in need.
+link: http://www.foodbanknyc.org/
+
+charity: Seeds of Peace
+description: n the face of some of the world’s most intractable conflicts, Seeds of Peace gives rise to new generations of leaders uniquely inspired and equipped to build lasting peace.
+Treaties are negotiated by governments; peace is made by people. Since 1993, Seeds of Peace has set the standard in international peace-building by providing exceptional young people and educators from regions of conflict with an otherwise impossible opportunity to meet their historic enemies face-to-face at our International Camp in Maine.
+link: http://www.seedsofpeace.org/
+
+charity: Robin Hood
+description: Robin Hood is New York's largest poverty-fighting organization, and since 1988 has focused on finding, funding and creating programs and schools that generate meaningful results for families in New York's poorest neighborhoods.  Since its founding, Robin Hood has raised more than $1.95 billion in dollars, goods and services to provide hundreds of the most effective soup kitchens, homeless shelters, schools, job-training programs and other vital services that give New York’s neediest citizens the tools they need to build better lives.  In addition, Robin Hood's board of directors pays all administrative, fundraising and evaluation costs, so 100% of your donation goes directly to organizations helping New Yorkers in need.
+link: https://www.robinhood.org/
