@@ -52,7 +52,7 @@ exports.postLogin = function(req, res, next) {
  * Log out.
  */
 exports.logout = function(req, res) {
-  req.logout();
+  req.logOut();
   res.redirect('/');
 };
 
