@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     email: Sequelize.STRING,
     password: Sequelize.STRING,
     contribution: { type: Sequelize.FLOAT, allowNull: false, defaultValue: 0},
+    battles_done: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false},
 
     facebook: Sequelize.STRING,
     twitter: Sequelize.STRING,

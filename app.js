@@ -53,6 +53,11 @@ var sequelizeStore = new SequelizeStore({ db: models.sequelize });
 sequelizeStore.sync();
 
 /**
+ * Initialize Sendgrid
+ */
+var sendgrid = require('sendgrid')(secrets.sendgrid);
+
+/**
  * Express configuration.
  */
 app.set('port', process.env.PORT || 3000);
@@ -69,7 +74,7 @@ app.use(expressValidator());
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(session({
-  resave: true,
+  resave: false,
   saveUninitialized: true,
   secret: secrets.sessionSecret,
   store: sequelizeStore

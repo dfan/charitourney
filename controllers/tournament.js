@@ -2,6 +2,9 @@ var async = require('async');
 var models = require('../models');
 var Tournament = models.Tournament;
 var User = models.User;
+var Battle = models.Battle;
+var Charity = models.Charity;
+var Choice = models.Choice;
 var braintree = require("braintree");
 var secrets = require("../config/secrets");
 var _ = require('lodash');
@@ -15,7 +18,7 @@ var braintreeGateway = braintree.connect({
 
 // GET /tournament/
 exports.getIndex = function(req, res) {
-  Tournament.findOne({where: { active: true }}).then(function(tournament) {
+  Tournament.findOne({where: {active: true}, include: [{model: Battle, include:[Choice, {model: Charity, as: 'Charity1'}, {model: Charity, as: 'Charity2'}]}]}).then(function(tournament) {
     User.findAll().then(function(users) {
       var totalContrib = _.reduce(users, function(sum, user) {
         return sum + user.contribution;
@@ -62,6 +65,7 @@ exports.postTournamentJoin = function(req, res) {
       });
     }
   ], function (err, results) {
+    req.flash('info', { msg: 'Successfully joined tournament with a $'+amount+' contribution.' });
     res.redirect('/tournament/');
   });
 };
