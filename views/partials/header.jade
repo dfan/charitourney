@@ -19,10 +19,9 @@
           a(href='/tournament') Tournament
       ul.nav.navbar-nav.navbar-right
         if !user
-          li(class=title=='Login'?'active':undefined)
-            a(href='/login') Login
-          li(class=title=='Create Account'?'active':undefined)
-            a(href='/signup') Create Account
+          a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')
+            i.fa.fa-twitter
+            | Sign in with Twitter
         else
           li.dropdown(class=title=='Account Management'?'active':undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
