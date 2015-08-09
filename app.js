@@ -74,7 +74,7 @@ app.use(expressValidator());
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(session({
-  resave: true,
+  resave: false,
   saveUninitialized: true,
   secret: secrets.sessionSecret,
   store: sequelizeStore
