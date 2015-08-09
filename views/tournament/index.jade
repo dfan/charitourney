@@ -27,7 +27,8 @@ block content
       if user && user.contribution == 0
         a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
       else if user
-        a.btn.btn-primary.disabled.btn-lg.center-block Your Contribution: $#{user.contribution}
+        a.btn.btn-success.disabled.btn-md.center-block Your Contribution: $#{user.contribution}
+        a.btn.btn-primary.btn-lg.center-block(href='/battle') Battle!
       .money
         h2 $#{totalContributions}
         img(src='/images/circle.png', class="circle_img")
