@@ -7,9 +7,3 @@ exports.index = function(req, res) {
     title: 'Home'
   });
 };
-
-exports.tournament = function(req, res) {
-  res.render('tournament', {
-    title: 'Tournament'
-  });
-};

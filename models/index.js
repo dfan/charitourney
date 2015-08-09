@@ -5,7 +5,10 @@ var path      = require('path');
 var Sequelize = require('sequelize');
 var basename  = path.basename(module.filename);
 var secrets = require('../config/secrets');
-var sequelize = new Sequelize(secrets.db, { dialectOptions: { ssl: true }});
+var sequelize = new Sequelize(secrets.db, {
+  logging: null,
+  dialectOptions: { ssl: true }
+});
 var db        = {};
 
 sequelize.sync();

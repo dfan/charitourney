@@ -31,6 +31,7 @@ var connectAssets = require('connect-assets');
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var battleController = require('./controllers/battle');
+var tournamentController = require('./controllers/tournament');
 var contactController = require('./controllers/contact');
 var paymentsController = require('./controllers/payment');
 
@@ -95,9 +96,13 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
-app.get('/tournament', homeController.tournament);
 app.get('/battle', battleController.get_battle);
 app.post('/battle', battleController.post_battle);
+
+// TOURNAMENT
+app.get('/tournament/', tournamentController.getIndex);
+app.get('/tournament/join', tournamentController.getTournamentJoin);
+
 
 // PAYMENT TEST
 app.get('/payments_test', paymentsController.getPaymentsTest);
