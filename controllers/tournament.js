@@ -24,9 +24,25 @@ exports.getIndex = function(req, res) {
         return sum + user.contribution;
       }, 0);
 
+      var battles = tournament.Battles;
+      for (var i=0; i < battles.length; i++){
+        var choices = battles[i].Choices;
+        battles[i].voted = false;
+        battles[i].charity_id = 0;
+        for (var j = 0; j < choices.length; j++){
+          if (choices[j].UserId == req.user.id){
+            battles[i].voted = true;
+            battles[i].charity_id = choices[j].CharityId;
+            console.log('!!!');
+            console.log(choices[j].CharityId);
+          }
+        }
+      }
+
       res.render('tournament/index', {
         title: 'Tournament',
-        totalContributions: totalContrib
+        totalContributions: totalContrib,
+        battles: battles
       });
     })
   });

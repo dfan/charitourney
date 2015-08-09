@@ -19,8 +19,8 @@ passport.serializeUser(function(ser_user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findOne({where: {id:id}}).then(function(ser_user){
-    done(null, ser_user);
+  User.findOne({where: {id:id}}).then(function(found_user){
+    done(null, found_user);
   });
 });
 

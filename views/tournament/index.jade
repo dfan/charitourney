@@ -11,16 +11,16 @@ block content
   .container-fluid
     .col-lg-3
       a(href="#dialog", rel="modal:open") 
-        img(src='/images/0nbtfrrx.jpg', class="charity_img")
+        img(src='/images/0nbtfrrx.jpg', class="charity_img", class=battles[0].charity_id == 1 ? 'active' : '')
       br 
       a(href="#dialog2", rel="modal:open") 
-        img(src='/images/01gttvpg.png', class="charity_img") 
+        img(src='/images/01gttvpg.png', class="charity_img", class=battles[0].charity_id == 2 ? 'active' : '')
       br
       a(href="#dialog3", rel="modal:open") 
-        img(src='/images/5rvCDaG3.png', class="charity_img") 
+        img(src='/images/5rvCDaG3.png', class="charity_img", class=battles[1].charity_id == 3 ? 'active' : '')
       br
       a(href="#dialog4", rel="modal:open") 
-        img(src='/images/11202.jpg', class="charity_img") 
+        img(src='/images/11202.jpg', class="charity_img", class=battles[1].charity_id == 4 ? 'active' : '') 
       br
        
     .col-lg-6
@@ -35,51 +35,51 @@ block content
       
     .col-lg-3 
       a(href="#dialog5", rel="modal:open") 
-        img(src='/images/bcrf_2014.jpg', class="charity_img") 
+        img(src='/images/bcrf_2014.jpg', class="charity_img", class=battles[2].charity_id == 5 ? 'active' : '') 
       br
       a(href="#dialog6", rel="modal:open") 
-        img(src='/images/foodbank41.jpg', class="charity_img") 
+        img(src='/images/foodbank41.jpg', class="charity_img", class=battles[2].charity_id == 6 ? 'active' : '')
       br
       a(href="#dialog7", rel="modal:open") 
-        img(src='/images/logo_sop.jpg', class="charity_img") 
+        img(src='/images/logo_sop.jpg', class="charity_img", class=battles[3].charity_id == 7 ? 'active' : '') 
       br
       a(href="#dialog8", rel="modal:open") 
-        img(src='/images/MpC.jpg', class="charity_img") 
+        img(src='/images/MpC.jpg', class="charity_img", class=battles[3].charity_id == 8 ? 'active' : '') 
       br
            
   #boxes
     #dialog.window
       p Charity 1: CityMeals on Wheels is awesome bruh.
       a(href='#', rel='modal:close') 
-      p Close or press ESC
+      p Citymeals-on-Wheels raises private funds to ensure no homebound elderly New Yorker will ever go a day without food or human company. Last year, our family of contributors helped us bring 2 million nutritious meals to more than 18,000 frail aged in every borough of New York City. 
     #dialog2.window
       p Charity 2: Learning Leaders.
       a(href='#', rel='modal:close') 
-      p Close or press ESC
+      p Learning Leaders is New York City’s largest and most experienced organization dedicated to engaging families and communities to support student success. Serving NYC public schools since 1956, our programs are proven to enhance student achievement by providing individualized tutoring and assistance to schools and increasing parents’ ability to foster their children’s education.
     #dialog3.window
       p Charity 3: New York Cares.
       a(href='#', rel='modal:close') 
-      p Close or press ESC
+      p New York Cares was founded by a group of friends who wanted to take action against serious social issues that faced our city in the late 1980s. Finding few options to help, they created their own organization to address the problems from the ground up. New York Cares is now the city's largest volunteer management organization.
     #dialog4.window
       p Charity 4: Henry Street Settlement.
       a(href='#', rel='modal:close') 
-      p Close or press ESC
+      p Henry Street Settlement delivers a wide range of social service, arts and health care programs to more than 50,000 New Yorkers each year. Distinguished by a profound connection to its neighbors, a willingness to address new problems with swift and innovative solutions, and a strong record of accomplishment.
     #dialog5.window
       p Charity 5: BCRF.
       a(href='#', rel='modal:close') 
-      p Close or press ESC
+      p We invest in research that's changing how we think about cancer. For every dollar spent, 91 cents is committed to tackling this disease. That means more answers, faster breakthroughs and treatment personalized for every patient. With more than half a billion dollars raised to date, that's progress.
     #dialog6.window
       p Charity 6: Food Bank for New York City.
       a(href='#', rel='modal:close') 
-      p Close or press ESC
+      p Food Bank For New York City has been the city’s major hunger-relief organization working to end hunger throughout the five boroughs for more than 30 years.
     #dialog7.window
       p Charity 7: Seeds of Peace.
       a(href='#', rel='modal:close') 
-      p Close or press ESC
+      p In the face of some of the world’s most intractable conflicts, Seeds of Peace gives rise to new generations of leaders uniquely inspired and equipped to build lasting peace.
     #dialog8.window
       p Charity 8: Targeting Poverty in NYC.
       a(href='#', rel='modal:close') 
-      p Close or press ESC    
+      p Robin Hood is New York's largest poverty-fighting organization, and since 1988 has focused on finding, funding and creating programs and schools that generate meaningful results for families in New York's poorest neighborhoods.  
      
 block scripts
   script(src="/js/jquery.modal.js", type="text/javascript", charset="utf-8")
