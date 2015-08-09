@@ -10,17 +10,17 @@ block content
   //- First Round
   .container-fluid
     .col-lg-3
-      a(href="#dialog", rel="modal:open") 
-        img(src='/images/0nbtfrrx.jpg', class="charity_img", class=battles[0].charity_id == 1 ? 'active' : '')
+      a(href="#dialog", rel="modal:open") #{battles[0].charity_id} #{battles[1].charity_id} #{battles[2].charity_id} #{battles[3].charity_id}
+        img(src='/images/0nbtfrrx.jpg', class="charity_img", class=battles[2].charity_id == 1 ? 'grey_out' : '')
       br 
       a(href="#dialog2", rel="modal:open") 
-        img(src='/images/01gttvpg.png', class="charity_img", class=battles[0].charity_id == 2 ? 'active' : '')
+        img(src='/images/01gttvpg.png', class="charity_img", class=battles[2].charity_id == 2 ? 'grey_out' : '')
       br
       a(href="#dialog3", rel="modal:open") 
-        img(src='/images/5rvCDaG3.png', class="charity_img", class=battles[1].charity_id == 3 ? 'active' : '')
+        img(src='/images/5rvCDaG3.png', class="charity_img", class=battles[0].charity_id == 3 ? 'grey_out' : '')
       br
       a(href="#dialog4", rel="modal:open") 
-        img(src='/images/11202.jpg', class="charity_img", class=battles[1].charity_id == 4 ? 'active' : '') 
+        img(src='/images/11202.jpg', class="charity_img", class=battles[0].charity_id == 4 ? 'grey_out' : '') 
       br
        
     .col-lg-6
@@ -35,16 +35,16 @@ block content
       
     .col-lg-3 
       a(href="#dialog5", rel="modal:open") 
-        img(src='/images/bcrf_2014.jpg', class="charity_img", class=battles[2].charity_id == 5 ? 'active' : '') 
+        img(src='/images/bcrf_2014.jpg', class="charity_img", class=battles[3].charity_id == 5 ? 'grey_out' : '') 
       br
       a(href="#dialog6", rel="modal:open") 
-        img(src='/images/foodbank41.jpg', class="charity_img", class=battles[2].charity_id == 6 ? 'active' : '')
+        img(src='/images/foodbank41.jpg', class="charity_img", class=battles[3].charity_id == 6 ? 'grey_out' : '')
       br
       a(href="#dialog7", rel="modal:open") 
-        img(src='/images/logo_sop.jpg', class="charity_img", class=battles[3].charity_id == 7 ? 'active' : '') 
+        img(src='/images/logo_sop.jpg', class="charity_img", class=battles[1].charity_id == 7 ? 'grey_out' : '') 
       br
       a(href="#dialog8", rel="modal:open") 
-        img(src='/images/MpC.jpg', class="charity_img", class=battles[3].charity_id == 8 ? 'active' : '') 
+        img(src='/images/MpC.jpg', class="charity_img", class=battles[1].charity_id == 8 ? 'grey_out' : '') 
       br
            
   #boxes
