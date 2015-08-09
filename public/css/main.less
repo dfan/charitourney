@@ -38,13 +38,6 @@ h1 {
   text-align: center;
 }
 
-h2.money div {
-    position: relative;
-    color: green;
-    top: 3.25em;
-    font-size: 5em;
-}
-
 // Navbar
 // -------------------------
 
@@ -90,12 +83,30 @@ h2.money div {
    box-shadow: 10px 10px 50px #ACACAC;
 }
 
-.circle_img {
+.money {
   display: block;
-  float: none;
   margin: 0 auto;
+
+  position: relative;
+  top: 100%;
   max-width: 400px;
-  margin-top: 8em;
+  transform: translateY(-0%);
+  -webkit-transform: translateY(-0%);
+}
+
+.money h2 {
+    color: green;
+    font-size: 1000%;
+    text-align: center;
+    margin-top: 50%;
+    position: relative;
+    width: 100%;
+}
+
+.money img {
+  max-width: 100%;
+  position: absolute;
+  top: -75%;
 }
 
 
