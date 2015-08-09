@@ -4,8 +4,12 @@ block content
   != css('main')
   h1 Battle!
   
-  .charity1
-    p charity 1 goes here
+  .charity1.charity
+    img(src="#{battle.Charity1.image}")
   
-  .charity2
-    p charity 2 goes here
+  .charity2.charity
+    img(src="#{battle.Charity2.image}")
+
+  form(action="POST")
+    input(hidden="true" id="battle_id" name="battle_id" value="#{battle.id}")
+    input(hidden="true" id="battle_id" name="charity_id" value="#{battle.Charity1.id}")

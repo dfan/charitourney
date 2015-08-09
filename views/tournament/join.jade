@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1 Join Current Tournament
+  .row
+    .col-md-6.col-md-offset-3
+      form#join_tournament.form-large(method='post', action=tournament)
+        .form-group
+          input(type='hidden', name='_csrf', value=_csrf)
+          label.sr-only(for='inputAmount') Amount (in dollars)
+          #payment_amount.input-group
+            .input-group-addon $
+            input.form-control(type='text', name='payment_amount', placeholder='Amount')
+            .input-group-addon .00
+          div#payment-form
+          button.btn.btn-lg.btn-primary.center-block(type='submit') Join Tournament
+  script(src='https://js.braintreegateway.com/v2/braintree.js')
+  script.
+      braintree.setup("#{clientToken}", "dropin", {
+        container: "payment-form"
+      });

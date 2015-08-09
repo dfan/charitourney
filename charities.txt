@@ -22,11 +22,11 @@ description: We invest in research that's changing how we think about cancer. Fo
 link: http://www.bcrfcure.org/
 
 charity: Food Bank for New York
-description: ood Bank For New York City has been the city’s major hunger-relief organization working to end hunger throughout the five boroughs for more than 30 years. Nearly one in five New Yorkers relies on Food Bank for food and other resources. Food Bank takes a strategic, multifaceted approach that provides meals and builds capacity in the neediest communities, while raising awareness and engagement among all New Yorkers. Through its network of more than 1,000 charities and schools citywide, Food Bank provides food for more than 66 million free meals for New Yorkers in need.
+description: Food Bank For New York City has been the city’s major hunger-relief organization working to end hunger throughout the five boroughs for more than 30 years. Nearly one in five New Yorkers relies on Food Bank for food and other resources. Food Bank takes a strategic, multifaceted approach that provides meals and builds capacity in the neediest communities, while raising awareness and engagement among all New Yorkers. Through its network of more than 1,000 charities and schools citywide, Food Bank provides food for more than 66 million free meals for New Yorkers in need.
 link: http://www.foodbanknyc.org/
 
 charity: Seeds of Peace
-description: n the face of some of the world’s most intractable conflicts, Seeds of Peace gives rise to new generations of leaders uniquely inspired and equipped to build lasting peace.
+description: In the face of some of the world’s most intractable conflicts, Seeds of Peace gives rise to new generations of leaders uniquely inspired and equipped to build lasting peace.
 Treaties are negotiated by governments; peace is made by people. Since 1993, Seeds of Peace has set the standard in international peace-building by providing exceptional young people and educators from regions of conflict with an otherwise impossible opportunity to meet their historic enemies face-to-face at our International Camp in Maine.
 link: http://www.seedsofpeace.org/
 
