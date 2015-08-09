@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         Battle.belongsTo(models.Tournament);
         Battle.hasOne(models.Charity, { as: 'Charity1' });
         Battle.hasOne(models.Charity, { as: 'Charity2' });
+        Battle.hasMany(models.Choice);
       }
     }
   });
