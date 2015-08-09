@@ -102,7 +102,7 @@ app.post('/battle', battleController.post_battle);
 // TOURNAMENT
 app.get('/tournament/', tournamentController.getIndex);
 app.get('/tournament/join', tournamentController.getTournamentJoin);
-
+app.post('/tournament/join', tournamentController.postTournamentJoin);
 
 // PAYMENT TEST
 app.get('/payments_test', paymentsController.getPaymentsTest);
