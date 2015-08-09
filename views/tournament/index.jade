@@ -61,6 +61,9 @@ block content
     .col-lg-6
       if user.contribution == 0
         a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
+      else
+        a.btn.btn-primary.disabled.btn-lg.center-block Your Contribution: $#{user.contribution}
+      p Total contribution: #{totalContributions}
       img(src="http://cdn2.winston.com/cached/40090/images/home-placeholder-circle.png", class="circle_img")
       
     .col-lg-3 
