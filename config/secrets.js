@@ -29,6 +29,8 @@ module.exports = {
     privateKey: '80228ded23bc36419b12ae4763759deb'
   },
 
+  sendgrid: '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',
+
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
   mailgun: {

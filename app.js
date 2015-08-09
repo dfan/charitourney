@@ -53,6 +53,11 @@ var sequelizeStore = new SequelizeStore({ db: models.sequelize });
 sequelizeStore.sync();
 
 /**
+ * Initialize Sendgrid
+ */
+var sendgrid = require('sendgrid')(secrets.sendgrid);
+
+/**
  * Express configuration.
  */
 app.set('port', process.env.PORT || 3000);
