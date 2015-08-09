@@ -3,6 +3,7 @@ var Choice = models.Choice;
 var Battle = models.Battle;
 var Tournament = models.Tournament;
 var User = models.User;
+var Charity = models.Charity;
 
 
 /**
@@ -11,7 +12,7 @@ var User = models.User;
  */
 exports.get_battle = function(req, res) {
   var tournament = Tournament.findOne({where: {active: true}}).then(function(tournament){
-    Tournament.findOne({where: {active: true}, include: [{model: Battle, include:[{model: Choice}]}]})
+    Tournament.findOne({where: {active: true}, include: [{model: Battle, include:[{model: Choice}, {model: Charity, as: 'Charity1'}, {model: Charity, as: 'Charity2'}]}]})
     .then(function(tournament) {
       var battles = tournament.Battles;
       for (var i=0; i < battles.length; i++){

@@ -7,8 +7,8 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Battle.belongsTo(models.Tournament);
-        Battle.hasOne(models.Charity, { as: 'Charity1' });
-        Battle.hasOne(models.Charity, { as: 'Charity2' });
+        Battle.belongsTo(models.Charity, { as: 'Charity1' });
+        Battle.belongsTo(models.Charity, { as: 'Charity2' });
         Battle.hasMany(models.Choice);
       }
     }
