@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
         associate: function(models) {
-            Choice.belongsTo(models.Charity, { as: "Vote" });
+            Choice.belongsTo(models.Charity);
             Choice.belongsTo(models.User);
             Choice.belongsTo(models.Battle);
         }

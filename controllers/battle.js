@@ -48,9 +48,10 @@ exports.post_battle = function(req, res) {
   Battle.findOne({id: battle_id}).then(function(battle){
     Charity.findOne({id: charity_id}).then(function(charity){
 
-      var choice = Choice.build({
-        battle: battle_id
-      });
+      var choice = Choice.build({});
+      choice.setBattle(battle);
+      choice.setCharity(charity);
+
       choice.save().then(function(){
         res.redirect('/battle');
       });
