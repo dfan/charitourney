@@ -48,10 +48,12 @@ exports.get_battle = function(req, res) {
 exports.post_battle = function(req, res) {
 	// Save Battle Data
   battle_id = req.body.battle_id;
-  charity_id = req.body.charity_id;
+  charity_id = parseInt(req.body.charity_id);
 
-  Battle.findOne({id: battle_id}).then(function(battle){
-    Charity.findOne({id: charity_id}).then(function(charity){
+  console.log(req.body);
+
+  Battle.findOne({where: {id: battle_id}}).then(function(battle){
+    Charity.findOne({ where: {id: charity_id}}).then(function(charity){
 
       var choice = Choice.build({});
       choice.save().then(function(){
