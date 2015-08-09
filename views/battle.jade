@@ -9,3 +9,7 @@ block content
   
   .charity2.charity
     img(src="#{battle.Charity2.image}")
+
+  form(action="POST")
+    input(hidden="true" id="battle_id" name="battle_id" value="#{battle.id}")
+    input(hidden="true" id="battle_id" name="charity_id" value="#{battle.Charity1.id}")
