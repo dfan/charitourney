@@ -20,7 +20,7 @@ passport.serializeUser(function(ser_user, done) {
 
 passport.deserializeUser(function(id, done) {
   User.findOne({where: {id:id}}).then(function(ser_user){
-    done(err, ser_user);
+    done(null, ser_user);
   });
 });
 
