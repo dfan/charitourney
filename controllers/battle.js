@@ -10,37 +10,31 @@ var User = models.User;
  * Battle page.
  */
 exports.get_battle = function(req, res) {
-
   var tournament = Tournament.findOne({where: {active: true}}).then(function(tournament){
-
     Tournament.findOne({where: {active: true}, include: [{model: Battle, include:[{model: Choice}]}]})
     .then(function(tournament) {
-      console.log(tournament);
-
       var battles = tournament.Battles;
-
-      for (var i; i < battles.length; i++){
+      for (var i=0; i < battles.length; i++){
         var choices = battles[i].Choices;
-        battle[i].voted = false;
+        battles[i].voted = false;
         for (var j; j < choices.length; j++){
-          if (choice.User.id == req.user.id){
-            battle[i].voted = true;
+          if (choices[j].User.id == req.user.id){
+            battles[i].voted = true;
           }
         }
       }
 
-      for (var k; k < battles.length; i++){
-        if (battle[k].voted === false && battle[k].round == tournament.current_round){
+      for (var k=0; k < battles.length; i++){
+        if (battles[k].voted !== true && battles[k].round == tournament.current_round){
           res.render('battle', {
             title: 'Battle!',
-            battle: battle[k]
+            battle: battles[k]
           });
+          return null;
         }
       }
-
       res.redirect('/tournament');
     });
-
   });
 };
 
