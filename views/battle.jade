@@ -5,11 +5,11 @@ block content
   h1 Battle!
   
   .charity1.charity
-    img(src="#{battle.Charity1.image}")
+    img(src="#{battle.Charity1.image}", class="choice_img", charityid="#{battle.Charity1.id}")
   
   .charity2.charity
-    img(src="#{battle.Charity2.image}")
+    img(src="#{battle.Charity2.image}", class="choice_img", charityid="#{battle.Charity2.id}")
 
-  form(action="POST")
+  form(method="post", action="battle", id="form")
     input(hidden="true" id="battle_id" name="battle_id" value="#{battle.id}")
     input(hidden="true" id="battle_id" name="charity_id" value="#{battle.Charity1.id}")
