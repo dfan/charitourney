@@ -1,4 +1,6 @@
-var Tournament = require('../models/Tournament');
+var async = require('async');
+var models = require('../models');
+var Tournament = models.Tournament;
 var braintree = require("braintree");
 var secrets = require("../config/secrets");
 
@@ -9,32 +11,21 @@ var braintreeGateway = braintree.connect({
   privateKey:   secrets.braintree.privateKey
 });
 
-
-// PARAM :user
-exports.tournamentParam = function(req, res, next, id) {
-  Tournament.findById(id, function(err, tournament) {
-    if (err) console.error(err);
-
-    req.tournament = tournament;
-    next();
-  })
-};
-
-// GET /tournaments/join
-// redirect to current tournament's join page
-exports.joinLatestTournament = function(req, res) {
-  Tournament.findOne({ active: true }, function(err, tournament) {
-    res.redirect('/tournaments/'+tournament.id+'/join');
+// GET /tournament/
+exports.getIndex = function(req, res) {
+  res.render('tournament/index', {
+    title: 'Tournament'
   });
 };
 
-// GET /tournaments/:tournament/join
-exports.joinTournamentById = function(req, res) {
-  braintreeGateway.clientToken.generate({}, function (err, btRes) {
-    res.render('tournaments/join', {
-      tournament: req.tournament,
-      clientToken: btRes.clientToken
-    });
+// GET /tournament/join
+// redirect to current tournament's join page
+exports.getTournamentJoin = function(req, res) {
+  braintreeGateway.clientToken.generate({}, function(err, btRes) {
+    res.render('tournament/join', {
+       title: 'Join Current Tournament',
+       clientToken: btRes.clientToken
+     });
   });
 };
 
@@ -46,7 +37,7 @@ exports.postTournamentJoin = function(req, res) {
     amount: req.body.payment_amount,
     paymentMethodNonce: nonce,
   }, function (err, btRes) {
-    res.redirect('/tournaments/' + tournament.id);
+    res.redirect('/tournament/');
     console.dir(btRes);
   });
-}
+};

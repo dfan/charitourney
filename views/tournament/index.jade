@@ -1,11 +1,10 @@
-extends layout
+extends ../layout
 
 // added js and css files for modal in header.jade
 
 block content
   h1 Tournament 
   != css('main')
-  
   
   //- First Round
   .container-fluid
@@ -30,6 +29,7 @@ block content
       br
        
     .col-lg-6
+      a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
       img(src="http://cdn2.winston.com/cached/40090/images/home-placeholder-circle.png", class="circle_img")
       
     .col-lg-3 
