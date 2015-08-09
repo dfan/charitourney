@@ -48,6 +48,7 @@ exports.get_battle = function(req, res) {
     });
   });
 });
+};
 
 
 exports.post_battle = function(req, res) {
