@@ -1,8 +1,10 @@
 var async = require('async');
 var models = require('../models');
 var Tournament = models.Tournament;
+var User = models.User;
 var braintree = require("braintree");
 var secrets = require("../config/secrets");
+var _ = require('lodash');
 
 var braintreeGateway = braintree.connect({
   environment:  braintree.Environment.Sandbox,
@@ -13,8 +15,17 @@ var braintreeGateway = braintree.connect({
 
 // GET /tournament/
 exports.getIndex = function(req, res) {
-  res.render('tournament/index', {
-    title: 'Tournament'
+  Tournament.findOne({where: { active: true }}).then(function(tournament) {
+    User.findAll().then(function(users) {
+      var totalContrib = _.reduce(users, function(sum, user) {
+        return sum + user.contribution;
+      }, 0);
+
+      res.render('tournament/index', {
+        title: 'Tournament',
+        totalContributions: totalContrib
+      });
+    })
   });
 };
 
@@ -29,15 +40,28 @@ exports.getTournamentJoin = function(req, res) {
   });
 };
 
-// POST /tournaments/:tournament/join
+// POST /tournaments/join
 exports.postTournamentJoin = function(req, res) {
+  var amount = req.body.payment_amount;
   var nonce = req.body.payment_method_nonce;
 
-  braintreeGateway.transaction.sale({
-    amount: req.body.payment_amount,
-    paymentMethodNonce: nonce,
-  }, function (err, btRes) {
+  async.series([
+    function(done) {
+      braintreeGateway.transaction.sale({
+        amount: amount,
+        paymentMethodNonce: nonce,
+      }, function(err, btRes) {
+        if (err) console.log(err);
+        done(null, btRes);
+      });
+    }, function(done) {
+      req.user.updateAttributes({
+        contribution: parseFloat(amount)
+      }).then(function() {
+        done(null, req.user);
+      });
+    }
+  ], function (err, results) {
     res.redirect('/tournament/');
-    console.dir(btRes);
   });
 };

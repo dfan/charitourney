@@ -4,57 +4,12 @@ extends ../layout
 
 block content
   h1 Tournament 
+
   != css('main')
   
   //- First Round
   .container-fluid
-    
-    
     .col-lg-3
-      #boxes
-        #dialog.window
-          p Charity 1: CityMeals on Wheels is awesome bruh.
-          a(href='#', rel='modal:close') 
-          p Close or press ESC
-        #dialog2.window
-          p Charity 2: Learning Leaders.
-          a(href='#', rel='modal:close') 
-          p Close or press ESC
-        #dialog3.window
-          p Charity 3: New York Cares.
-          a(href='#', rel='modal:close') 
-          p Close or press ESC
-        #dialog4.window
-          p Charity 4: Henry Street Settlement.
-          a(href='#', rel='modal:close') 
-          p Close or press ESC
-        #dialog5.window
-          p Charity 5: BCRF.
-          a(href='#', rel='modal:close') 
-          p Close or press ESC
-        #dialog6.window
-          p Charity 6: Food Bank for New York City.
-          a(href='#', rel='modal:close') 
-          p Close or press ESC
-        #dialog7.window
-          p Charity 7: Seeds of Peace.
-          a(href='#', rel='modal:close') 
-          p Close or press ESC
-        #dialog8.window
-          p Charity 8: Targeting Poverty in NYC.
-          a(href='#', rel='modal:close') 
-          p Close or press ESC    
-
-
-      //#ex1(style='display:none;')
-        //p Thanks for clicking. That felt good.
-          //a(href='#', rel='modal:close') 
-          //p Close or press ESC
-
-
-
-
-      
       a(href="#dialog", rel="modal:open") 
         img(src='/images/0nbtfrrx.jpg', class="charity_img")
       br 
@@ -69,8 +24,13 @@ block content
       br
        
     .col-lg-6
-      a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
-      img(src="http://cdn2.winston.com/cached/40090/images/home-placeholder-circle.png", class="circle_img")
+      if user.contribution == 0
+        a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
+      else
+        a.btn.btn-primary.disabled.btn-lg.center-block Your Contribution: $#{user.contribution}
+      .money
+        h2 $#{totalContributions}
+        img(src='/images/circle.png', class="circle_img")
       
     .col-lg-3 
       a(href="#dialog5", rel="modal:open") 
@@ -85,47 +45,41 @@ block content
       a(href="#dialog8", rel="modal:open") 
         img(src='/images/MpC.jpg', class="charity_img") 
       br
-              
+           
+  #boxes
+    #dialog.window
+      p Charity 1: CityMeals on Wheels is awesome bruh.
+      a(href='#', rel='modal:close') 
+      p Close or press ESC
+    #dialog2.window
+      p Charity 2: Learning Leaders.
+      a(href='#', rel='modal:close') 
+      p Close or press ESC
+    #dialog3.window
+      p Charity 3: New York Cares.
+      a(href='#', rel='modal:close') 
+      p Close or press ESC
+    #dialog4.window
+      p Charity 4: Henry Street Settlement.
+      a(href='#', rel='modal:close') 
+      p Close or press ESC
+    #dialog5.window
+      p Charity 5: BCRF.
+      a(href='#', rel='modal:close') 
+      p Close or press ESC
+    #dialog6.window
+      p Charity 6: Food Bank for New York City.
+      a(href='#', rel='modal:close') 
+      p Close or press ESC
+    #dialog7.window
+      p Charity 7: Seeds of Peace.
+      a(href='#', rel='modal:close') 
+      p Close or press ESC
+    #dialog8.window
+      p Charity 8: Targeting Poverty in NYC.
+      a(href='#', rel='modal:close') 
+      p Close or press ESC    
+     
 block scripts
   script(src="/js/jquery.modal.js", type="text/javascript", charset="utf-8")
   script(src="/js/jquery.bpopup.min.js", type="text/javascript", charset="utf-8")
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  //- #charity1.charity.col-md-1
-  //-   img(src="http://tampabayparadeofhomes.com/wp-content/uploads/ngg_featured/placeholder-square.jpg", class="charity_image")
-  //- #charity2.charity.col-md-10
-  //-   img(src="http://tampabayparadeofhomes.com/wp-content/uploads/ngg_featured/placeholder-square.jpg", class="charity_image")  
-  //- //- #circle
-  //- //-   img(src="http://cdn2.winston.com/cached/40090/images/home-placeholder-circle.png", class="circle")
-  //- //- 
-  //- #charity3.charity.col-md-1
-  //-   img(src="http://tampabayparadeofhomes.com/wp-content/uploads/ngg_featured/placeholder-square.jpg", class="charity_image")
-  //- #charity4.charity.col-sm-4
-  //-   img(src="http://tampabayparadeofhomes.com/wp-content/uploads/ngg_featured/placeholder-square.jpg", class="charity_image")          
-  //- #charity5.charity.col-sm-8
-  //-   img(src="http://tampabayparadeofhomes.com/wp-content/uploads/ngg_featured/placeholder-square.jpg", class="charity_image")          
-  //- #charity6.charity.col-sm-4
-  //-   img(src="http://tampabayparadeofhomes.com/wp-content/uploads/ngg_featured/placeholder-square.jpg", class="charity_image")          
-  //- #charity7.charity.col-sm-8
-  //-   img(src="http://tampabayparadeofhomes.com/wp-content/uploads/ngg_featured/placeholder-square.jpg", class="charity_image")          
-  //- #charity8.charity.col-sm-4
-  //-   img(src="http://tampabayparadeofhomes.com/wp-content/uploads/ngg_featured/placeholder-square.jpg", class="charity_image")          
