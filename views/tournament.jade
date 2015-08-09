@@ -10,36 +10,79 @@ block content
   //- First Round
   .container-fluid
     
-    a(href="#dialog", rel="modal:open") Simple Modal Window
-    #boxes
-      #dialog.window
-
-    #ex1.modal(style='display:none;')
-      p Thanks for clicking. That felt good.
-        a(href='#', rel='modal:close') Close or press ESC
-
+    
     .col-lg-3
-  
-      img(src='/images/0nbtfrrx.jpg', class="charity_img")
+      #boxes
+        #dialog.window
+          p Charity 1: CityMeals on Wheels is awesome bruh.
+          a(href='#', rel='modal:close') 
+          p Close or press ESC
+        #dialog2.window
+          p Charity 2: Learning Leaders.
+          a(href='#', rel='modal:close') 
+          p Close or press ESC
+        #dialog3.window
+          p Charity 3: New York Cares.
+          a(href='#', rel='modal:close') 
+          p Close or press ESC
+        #dialog4.window
+          p Charity 4: Henry Street Settlement.
+          a(href='#', rel='modal:close') 
+          p Close or press ESC
+        #dialog5.window
+          p Charity 5: BCRF.
+          a(href='#', rel='modal:close') 
+          p Close or press ESC
+        #dialog6.window
+          p Charity 6: Food Bank for New York City.
+          a(href='#', rel='modal:close') 
+          p Close or press ESC
+        #dialog7.window
+          p Charity 7: Seeds of Peace.
+          a(href='#', rel='modal:close') 
+          p Close or press ESC
+        #dialog8.window
+          p Charity 8: Targeting Poverty in NYC.
+          a(href='#', rel='modal:close') 
+          p Close or press ESC    
+
+
+      //#ex1(style='display:none;')
+        //p Thanks for clicking. That felt good.
+          //a(href='#', rel='modal:close') 
+          //p Close or press ESC
+
+
+
+
+      
+      a(href="#dialog", rel="modal:open") 
+        img(src='/images/0nbtfrrx.jpg', class="charity_img")
       br 
-      img(src='/images/01gttvpg.png', class="charity_img") 
+      a(href="#dialog2", rel="modal:open") 
+        img(src='/images/01gttvpg.png', class="charity_img") 
       br
-      img(src='/images/5rvCDaG3.png', class="charity_img") 
+      a(href="#dialog3", rel="modal:open") 
+        img(src='/images/5rvCDaG3.png', class="charity_img") 
       br
-      img(src='/images/11202.jpg', class="charity_img") 
+      a(href="#dialog4", rel="modal:open") 
+        img(src='/images/11202.jpg', class="charity_img") 
        
     .col-lg-6
       img(src="http://cdn2.winston.com/cached/40090/images/home-placeholder-circle.png", class="circle_img")
       
     .col-lg-3 
+      a(href="#dialog5", rel="modal:open") 
+        img(src='/images/bcrf_2014.jpg', class="charity_img") 
       br
-      img(src='/images/bcrf_2014.jpg', class="charity_img") 
+      a(href="#dialog6", rel="modal:open") 
+        img(src='/images/foodbank41.jpg', class="charity_img") 
       br
-      img(src='/images/foodbank41.jpg', class="charity_img") 
+      a(href="#dialog7", rel="modal:open") 
+        img(src='/images/logo_sop.jpg', class="charity_img") 
       br
-      img(src='/images/logo_sop.jpg', class="charity_img") 
-      br
-      img(src='/images/MpC.jpg', class="charity_img") 
+      a(href="#dialog8", rel="modal:open") 
+        img(src='/images/MpC.jpg', class="charity_img") 
       br
               
 block scripts
