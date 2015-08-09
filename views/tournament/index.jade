@@ -4,12 +4,15 @@ extends ../layout
 
 block content
   h1 Tournament 
+
   != css('main')
   
   //- First Round
   .container-fluid
-    
-    
+    h2.money
+      center
+        div
+          =totalContributions
     .col-lg-3
       #boxes
         #dialog.window
@@ -63,8 +66,8 @@ block content
         a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
       else
         a.btn.btn-primary.disabled.btn-lg.center-block Your Contribution: $#{user.contribution}
-      p Total contribution: #{totalContributions}
-      img(src="http://cdn2.winston.com/cached/40090/images/home-placeholder-circle.png", class="circle_img")
+      a.btn.btn-primary.btn-lg.center-block(href='/tournament/join') Join Tournament
+      img(src='/images/circle.png', class="circle_img")
       
     .col-lg-3 
       a(href="#dialog5", rel="modal:open") 
