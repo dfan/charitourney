@@ -11,6 +11,11 @@ var Charity = models.Charity;
  * Battle page.
  */
 exports.get_battle = function(req, res) {
+
+  if (req.user == null || req.user.contribution == 0){
+    res.redirect('/tournament/join');
+  }
+
   var tournament = Tournament.findOne({where: {active: true}}).then(function(tournament){
     Tournament.findOne({where: {active: true}, include: [{model: Battle, include:[{model: Choice}, {model: Charity, as: 'Charity1'}, {model: Charity, as: 'Charity2'}]}]})
     .then(function(tournament) {

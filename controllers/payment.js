@@ -10,6 +10,10 @@ var braintreeGateway = braintree.connect({
 
 // GET /payments_test
 exports.getPaymentsTest = function(req, res) {
+  if (req.user == null){
+    res.redirect('/auth/twitter');
+  }
+
   braintreeGateway.clientToken.generate({}, function(err, btRes) {
     res.render('payments_test', {
       clientToken: btRes.clientToken
